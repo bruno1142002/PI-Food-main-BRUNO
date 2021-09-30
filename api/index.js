@@ -1,53 +1,53 @@
 
 const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const { conn, Type } = require('./src/db.js');
+
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    console.log('%s listening at 3001');// eslint-disable-line no-console
+    const glutenFree = Type.findOrCreate({
+      where:{
+        name:'gluten free'
+      }
+    });
+    const vegetarian = Type.findOrCreate({
+      where:{
+        name:'vegetarian'
+      }
+    });
+    const lactoVegetarian = Type.findOrCreate({
+      where:{
+        name:'lacto ovo vegetarian'
+      }
+    });
+    const ovoVegetarian = Type.findOrCreate({
+      where:{
+        name:'dairy free'
+      }
+    });
+    const vegan = Type.findOrCreate({
+      where:{
+        name:'vegan'
+      }
+    });
+    const pescetarian = Type.findOrCreate({
+      where:{
+        name:'pescatarian'
+      }
+    });
+    const paleo = Type.findOrCreate({
+      where:{
+        name:'paleolithic'
+      }
+    });
+    const primal = Type.findOrCreate({
+      where:{
+        name:'primal'
+      }
+    });
 
-const glutenFree = Type.findOrCreate({
-  where:{
-    name:'Gluten Free'
-  }
-});
-const vegetarian = Type.findOrCreate({
-  where:{
-    name:'Vegetarian'
-  }
-});
-const lactoVegetarian = Type.findOrCreate({
-  where:{
-    name:'Lacto Ovovegetarian'
-  }
-});
-const ovoVegetarian = Type.findOrCreate({
-  where:{
-    name:'Dairy Free'
-  }
-});
-const vegan = Type.findOrCreate({
-  where:{
-    name:'Vegan'
-  }
-});
-const pescetarian = Type.findOrCreate({
-  where:{
-    name:'Pescatarian'
-  }
-});
-const paleo = Type.findOrCreate({
-  where:{
-    name:'Paleolithic'
-  }
-});
-const primal = Type.findOrCreate({
-  where:{
-    name:'Primal'
-  }
-});
 
-
-});
+  });
 });
