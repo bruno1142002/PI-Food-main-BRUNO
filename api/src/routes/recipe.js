@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { Recipe, Type } = require('../db');
 const { default: axios } = require('axios');
-const { YOUR_API_KEY } = process.env; // resolver problema de API//
+const { YOUR_API_KEY } = '1f7a92bb9fe946df85c2e1df498b1448' ; // resolver problema de API//
 const { URL_INFO, URL_RECIPE } = require('../utils/path.js');
 
 const route = Router();
