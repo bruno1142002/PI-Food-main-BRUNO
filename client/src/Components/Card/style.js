@@ -7,6 +7,7 @@ export const StyledDiv = styled.div`
   margin-top: 0px !important;
   padding-top: 0px !important;
   border: 1px solid black;
+
 .card-title {
   margin-bottom: 15px;
 }

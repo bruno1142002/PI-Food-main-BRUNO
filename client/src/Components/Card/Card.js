@@ -19,7 +19,7 @@ const Card = ({id, title, image, diets, Types, dishTypes }) => {
                 {Types?<div className='card-list'>
                     {Types && Types.map((el, i) =>(<li key={i} className='card-li' >{el.name}</li>))}
                     </div>:null}
-                
+                {/* {dishTypes? <h5>{dishTypes}</h5>: null} */}
                 </ul>
             </div>
         </div>
