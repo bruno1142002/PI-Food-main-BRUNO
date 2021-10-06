@@ -11,7 +11,7 @@ export const getRecipes = () => async (dispatch) => {
 };
 export const getRecipesDetail = (id) => async (dispatch) => {
 	try {
-		const res = await axios.get(`http://localhost:3001/recipes/${id}`);
+		const res = await axios.get(`http://localhost:300/recipes/${id}`);
 		console.log(res)
 		dispatch({type: 'GET_RECIPE_DETAIL', payload: res.data});
 	} catch (err) {

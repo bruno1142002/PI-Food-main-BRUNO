@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { Recipe, Type } = require('../db');
 const { default: axios } = require('axios');
-const { YOUR_API_KEY } = '1f7a92bb9fe946df85c2e1df498b1448' ;;
+const { YOUR_API_KEY } = '1f7a92bb9fe946df85c2e1df498b1448' ;
 const { URL_INFO, URL_RECIPE } = require('../utils/path.js');
 
 const route = Router();
@@ -24,7 +24,7 @@ route.get('/', async (req, res) => {
     }))
 
     var dbRecetas = await Recipe.findAll({ include: [Type] })
-
+    console.log(dbRecetas)
     var todas = [...dbRecetas, ...recetas1]
 
     if (name === undefined) {
@@ -40,6 +40,7 @@ route.get('/', async (req, res) => {
 
 
 });
+
 
 route.get('/:id', async (req, res, next) => {
 
